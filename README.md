@@ -23,4 +23,4 @@ A responsive Weather App built using HTML, Tailwind CSS, JavaScript, Axios, and 
 
 1. Clone repository
 2. Open `index.html`
-3. Add your WeatherAPI key in `script.js`
+3. Add your WeatherAPI key in `weather.js`
