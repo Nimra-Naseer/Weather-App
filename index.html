@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>WEATHER WEBPAGE</title>
+
+  <style>
+    body {
+      font-family: "PT Serif", serif;
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-screen flex items-center justify-center flex-col bg-[url('./images/bg.jpg')] bg-cover bg-no-repeat bg-center m-0 p-4">
+
+  <!-- Weather Card -->
+  <div
+    class="w-full max-w-[350px] rounded-2xl border border-[#7F8189] bg-white/20 backdrop-blur-md p-4 text-center shadow-lg">
+
+    <h1 class="text-3xl font-bold mb-5">
+      Hello Weather
+    </h1>
+
+    <!-- Form -->
+    <form onsubmit="getWeather(event)" class="flex flex-col gap-3">
+
+      <!-- Input -->
+      <input id="city-input" type="text" placeholder="Enter your city name:"
+        class="h-[52px] w-full rounded-lg bg-gradient-to-b from-[#464d55] to-[#25292e] text-white text-[18px] px-5 outline-none shadow-[0_10px_20px_rgba(0,0,0,0.1),0_3px_6px_rgba(0,0,0,0.05)] transition-all duration-150 focus:shadow-[0_0_0_3px_rgba(0,0,0,0.5)] hover:opacity-85 sm:h-[48px]" />
+
+      <!-- Button -->
+      <button type="submit"
+        class="group relative w-full sm:w-1/2 mx-auto overflow-hidden rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-700 px-6 py-3 text-white text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/40 active:scale-95">
+
+        <span class="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        </span>
+
+        <span class="relative z-10 flex items-center justify-center gap-2">
+          Get Weather
+        </span>
+
+      </button>
+
+    </form>
+
+    <!-- Header -->
+    <div class="flex flex-col items-center justify-center mt-4">
+
+      <img src="" id="weather-icon" alt="weather icon" class="w-20 h-20 hidden" />
+
+      <h3 id="weather-term" class="mb-2 text-xl font-semibold"></h3>
+
+    </div>
+
+    <!-- Temperature -->
+    <div class="mt-2">
+
+      <h2 id="temp-result" class="m-0 text-4xl font-bold"></h2>
+
+      <p id="fl-result" class="text-[#0D3AD5]"></p>
+
+    </div>
+
+    <!-- Weather Details -->
+    <div class="mt-5 space-y-1">
+
+      <h4 id="humidity-result"></h4>
+
+      <h4 id="wind-result"></h4>
+
+      <h4 id="precipitation-percentage"></h4>
+
+    </div>
+
+  </div>
+
+  <audio id="sparrow-chirping" src="./bird chirping.wav"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.17.0/dist/axios.min.js"></script>
+
+  <script src="./weather.js"></script>
+
+</body>
+
+</html>
