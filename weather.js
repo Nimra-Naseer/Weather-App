@@ -1,15 +1,6 @@
 async function getWeather(event) {
   event.preventDefault();
 
-  // Audio play
-  const audio = document.getElementById("sparrow-chirping");
-
-  if (audio) {
-    audio.play().catch((error) => {
-      console.log("Audio blocked:", error);
-    });
-  }
-
   // City Input
   const city = document.getElementById("city-input").value.trim();
 
